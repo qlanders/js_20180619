@@ -1,10 +1,12 @@
 module.exports = {
-  entry: './src/vitrina.js',
+  entry: './src/app.js',
+  mode: 'development',
 
   output: {
     filename: 'bundle.js'
   },
   devtool: 'eval-source-map',
+  watch: true,
 
   module: {
     rules: [
@@ -25,6 +27,12 @@ module.exports = {
           "css-loader", // translates CSS into CommonJS
           "sass-loader" // compiles Sass to CSS
         ]
+      },
+      {
+        test: /\.pug$/,
+        use: {
+          loader: 'pug-loader'
+        }
       }
     ]
   }
