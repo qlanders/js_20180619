@@ -10,5 +10,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
   let messages = getByElement(document.body.querySelector('.messages'));
 
-  console.log(messages);
+  messages.addMessage({
+    author: 'some',
+    text: 'aaaaaaa'
+  });
+
 });
