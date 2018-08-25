@@ -1,13 +1,13 @@
 import {Component} from '../component';
-import style from './users.scss';
+import './users.scss';
 import template from './users.pug';
 
 export class Users extends Component {
-    static get bemName() {
-        return 'users';
-    }
+	static get bemName() {
+		return 'users';
+	}
 
-    render() {
-        super.render(template);
-    }
+	get template() {
+		return template;
+	}
 }

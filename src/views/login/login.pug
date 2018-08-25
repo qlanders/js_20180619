@@ -1,0 +1,17 @@
+form.login
+    h1.title Authorization
+    .field(data-component='field', data-options={
+        'placeholder': 'login',
+        'type': "text",
+        'name': 'login'
+    })
+    .field(data-component='field', data-options={
+        'placeholder': 'password',
+        'type': 'password',
+        'name': 'password'
+    })
+    .button(data-component='button', data-options={
+        'text': 'Button'
+    })
+    br
+    a.link(href='#signup')= 'Registration'

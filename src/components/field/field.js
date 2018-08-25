@@ -1,13 +1,17 @@
 import {Component} from '../component';
-import style from './field.scss';
+import './field.scss';
 import template from './field.pug';
 
 export class Field extends Component {
-    static get bemName() {
-        return 'field';
-    }
+	static get bemName() {
+		return 'field';
+	}
 
-    render() {
-        super.render(template);
-    }
+	get template() {
+		return template;
+	}
+
+	get value() {
+		return this.node.value;
+	}
 }

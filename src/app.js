@@ -1,15 +1,19 @@
 import template from './app.pug';
-import {wrap, getByElement} from './components';
-import data from './data/data';
-import styles from './static/styles/styles.scss'
+import './static/styles/styles.scss';
+import { Router } from './modules/router';
+
+import { LoginView } from './views/login/login';
+import { SignupView } from './views/signup/signup';
 
 window.addEventListener('DOMContentLoaded', function () {
+	document.body.innerHTML = template();
+	let router = new Router();
+	const loginView = new LoginView(document.querySelector('.login-view'));
+	const signupView = new SignupView(document.querySelector('.signup-view'));
 
-    document.body.innerHTML = template(data);
-    wrap(document.body);
+	router
+		.register('login', loginView)
+		.register('signup', signupView);
 
-    // let button = getByElement(document.querySelector('.button'));
-    //
-    // console.log(button);
-
+	router.start();
 });
